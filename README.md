@@ -39,36 +39,31 @@ pip install -r requirements.txt
 ### 项目结构
 
 ```shell
-.
-├── README.md
-├── img
-│   ├── decode.png
-│   ├── encode.png
-│   ├── explain.png
-│   ├── imgprocess.png
-│   ├── lsb.png
-│   ├── process.png
-│   └── result.png
-├── requirements.txt
-└── src
-    ├── __pycache__
-    │   ├── imgprocess.cpython-39.pyc
-    │   └── lsb.cpython-39.pyc
-    ├── imgprocess.py
-    ├── lsb.py
-    ├── main.py
-    └── test
-        ├── decode_image.png
-        ├── decode_text.txt
-        ├── encode_image.png
-        └── encode_text.txt
+.              
+├── LICENSE.txt
+├── MANIFEST.in
+├── README.md  
+├── README.rst 
+├── __pycache__
+├── img               
+│   ├── decode.png    
+│   ├── encode.png    
+│   │   └── imgprocess.cpython-39.pyc
+│   ├── endetext.py
+│   └── imgprocess.py
+├── test
+│   ├── decode_image.png
+│   ├── decode_text.txt
+│   ├── encode_image.png
+│   └── encode_text.txt
+└── test.py
 
-4 directories, 18 files
+5 directories, 24 files
 ```
 
 ```shell
-加密程序 位于lsb.py文件 第26行
-解密程序 位于lsb.py文件 第69行
+加密程序 位于endetext.py文件 第26行
+解密程序 位于endetext.py文件 第69行
 ```
 
 - **imgprogress.py**，结构如下图
@@ -107,7 +102,7 @@ pip install -r requirements.txt
 
 ### 项目功能
 
-用户运行`main.py`，根据提示指定要实现的功能，包括加密和解密。交互界面如下图。
+用户运行`test.py`，根据提示指定要实现的功能，包括加密和解密。交互界面如下图。
 
 - 加密：用户根据提示输入原始图片文件名和隐藏信息的存储位置（若用户无输入，则默认调用`./test`中相应的的测试文件）
 

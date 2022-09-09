@@ -45,31 +45,45 @@ LSB隐写术
 
 .. code:: shell
 
-   .
-   ├── README.md
-   ├── img
-   │   ├── decode.png
-   │   ├── encode.png
-   │   ├── explain.png
-   │   ├── imgprocess.png
-   │   ├── lsb.png
-   │   ├── process.png
-   │   └── result.png
-   ├── requirements.txt
-   └── src
-       ├── __pycache__
-       │   ├── imgprocess.cpython-39.pyc
-       │   └── lsb.cpython-39.pyc
-       ├── imgprocess.py
-       ├── lsb.py
-       ├── main.py
-       └── test
-           ├── decode_image.png
-           ├── decode_text.txt
-           ├── encode_image.png
-           └── encode_text.txt
+.
+├── LICENSE.txt
+├── MANIFEST.in
+├── README.md
+├── README.rst
+├── __pycache__
+├── dist
+│   └── lsb-steg-1.0.0.tar.gz
+├── img
+│   ├── decode.png
+│   ├── encode.png
+│   ├── explain.png
+│   ├── imgprocess.png
+│   ├── logo.ico
+│   ├── lsb.png
+│   ├── process.png
+│   └── result.png
+├── lsb_steg.egg-info
+│   ├── PKG-INFO
+│   ├── SOURCES.txt
+│   ├── dependency_links.txt
+│   └── top_level.txt
+├── setup.py
+├── src
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-39.pyc
+│   │   ├── endetext.cpython-39.pyc
+│   │   └── imgprocess.cpython-39.pyc
+│   ├── endetext.py
+│   └── imgprocess.py
+├── test
+│   ├── decode_image.png
+│   ├── decode_text.txt
+│   ├── encode_image.png
+│   └── encode_text.txt
+└── test.py
 
-   4 directories, 18 files
+7 directories, 29 files
 
 .. code:: shell
 

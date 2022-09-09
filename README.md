@@ -39,15 +39,34 @@ pip install -r requirements.txt
 ### 项目结构
 
 ```shell
-.              
+.
 ├── LICENSE.txt
 ├── MANIFEST.in
-├── README.md  
-├── README.rst 
+├── README.md
+├── README.rst
 ├── __pycache__
-├── img               
-│   ├── decode.png    
-│   ├── encode.png    
+├── dist
+│   └── lsb-steg-1.0.0.tar.gz
+├── img
+│   ├── decode.png
+│   ├── encode.png
+│   ├── explain.png
+│   ├── imgprocess.png
+│   ├── logo.ico
+│   ├── lsb.png
+│   ├── process.png
+│   └── result.png
+├── lsb_steg.egg-info
+│   ├── PKG-INFO
+│   ├── SOURCES.txt
+│   ├── dependency_links.txt
+│   └── top_level.txt
+├── setup.py
+├── src
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-39.pyc
+│   │   ├── endetext.cpython-39.pyc
 │   │   └── imgprocess.cpython-39.pyc
 │   ├── endetext.py
 │   └── imgprocess.py
@@ -58,7 +77,7 @@ pip install -r requirements.txt
 │   └── encode_text.txt
 └── test.py
 
-5 directories, 24 files
+7 directories, 29 files
 ```
 
 ```shell

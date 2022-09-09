@@ -36,54 +36,63 @@
 pip install -r requirements.txt
 ```
 
-### 项目结构
+## 项目结构
 
 ```shell
-.
+.              
 ├── LICENSE.txt
 ├── MANIFEST.in
-├── README.md
-├── README.rst
+├── README.md  
+├── README.rst 
 ├── __pycache__
-├── dist
-│   └── lsb-steg-1.0.0.tar.gz
-├── img
+├── build
+│   ├── bdist.linux-x86_64
+│   │   └── wininst
+│   │       └── PURELIB
+│   │           ├── lsb_steg-1.0.0-py3.9.egg-info
+│   │           │   ├── PKG-INFO
+│   │           │   ├── SOURCES.txt
+│   │           │   ├── dependency_links.txt
+│   │           │   └── top_level.txt
+│   │           ├── lsb  # 源代码
+│   │           │   ├── __init__.py
+│   │           │   ├── endetext.py
+│   │           │   └── imgprocess.py
+│   │           └── test.py
+│   ├── bdist.win-amd64
+│   └── lib
+│       ├── lsb  # 源代码
+│       │   ├── __init__.py
+│       │   ├── endetext.py
+│       │   └── imgprocess.py
+│       └── test.py
+├── dist  # 发布包
+│   ├── lsb-steg-1.0.0.linux-x86_64.exe
+│   ├── lsb-steg-1.0.0.linux-x86_64.tar.gz
+│   ├── lsb-steg-1.0.0.tar.gz
+│   ├── lsb-steg-1.0.0.win-amd64.zip
+│   ├── lsb_steg-1.0.0-py3-none-any.whl
+│   └── lsb_steg-1.0.0-py3.9.egg
+├── img  # 测试用图片
 │   ├── decode.png
 │   ├── encode.png
 │   ├── explain.png
 │   ├── imgprocess.png
-│   ├── logo.ico
 │   ├── lsb.png
-│   ├── process.png
-│   └── result.png
-├── lsb_steg.egg-info
-│   ├── PKG-INFO
-│   ├── SOURCES.txt
-│   ├── dependency_links.txt
-│   └── top_level.txt
-├── setup.py
-├── src
-│   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-39.pyc
-│   │   ├── endetext.cpython-39.pyc
-│   │   └── imgprocess.cpython-39.pyc
-│   ├── endetext.py
-│   └── imgprocess.py
-├── test
-│   ├── decode_image.png
 │   ├── decode_text.txt
 │   ├── encode_image.png
 │   └── encode_text.txt
-└── test.py
+└── main.py  # 项目测试文件
 
-7 directories, 29 files
+16 directories, 45 files
 ```
 
 ```shell
 加密程序 位于endetext.py文件 第26行
 解密程序 位于endetext.py文件 第69行
 ```
+
+### 源代码结构
 
 - **imgprogress.py**，结构如下图
   
@@ -119,12 +128,69 @@ pip install -r requirements.txt
     
     - 将获取的信息存储到用户指定的文本文件中
 
-### 项目功能
+## 项目功能
 
-用户运行`test.py`，根据提示指定要实现的功能，包括加密和解密。交互界面如下图。
+用户运行`main.py`，根据提示指定要实现的功能，包括加密和解密。交互界面和运行结果如下图。
 
 - 加密：用户根据提示输入原始图片文件名和隐藏信息的存储位置（若用户无输入，则默认调用`./test`中相应的的测试文件）
 
 - 解密：用户根据提示输入藏有信心的图片的文件名和获取信息的存储位置（若用户无输入，则默认调用`./test`中相应的的测试文件）
 
 <img title="" src="./img/process.png" alt="process.png" width="559">
+
+<img src="./img/result.png" title="" alt="" width="557">
+
+## 安装与使用
+
+### 安装教程
+
+- 源码压缩包`lsb-steg-1.0.0.tar.gz`
+  
+  1. 解压
+  
+  2. 进入层级目录
+  
+  3. 安装：`python setup.py install `；卸载`pip uninstall lsb-steg`
+
+- 二进制压缩包`lsb-steg-1.0.0.linux-x86_64.tar.gz`和`lsb-steg-1.0.0.win-amd64.zip`
+  
+  1. 解压
+  
+  2. 复制到`site-packages`目录下
+
+- `.egg`和`whl`
+  
+  - easy_install lsb_steg-1.0.0-py3.9.egg
+  
+  - easy_install lsb_steg-1.0.0-py3-none-any.whl
+
+## 使用示例
+
+```python
+from lsb import *
+
+
+def main():
+    while True:
+        choice = input("加密信息请按1，解密信息请按2, 退出程序请按3: ")
+        if choice == "1":
+            encode_image = input("请输入原始图片文件名: ")
+            encode_text = input("请输入待隐藏信息的存储位置: ")
+            encode_obj = endetext.LSB(encode_image, encode_text)
+            encode_obj.lsbEncode()
+        elif choice == "2":
+            decode_image = input("请输入藏有信息的图片的文件名: ") 
+            decode_text = input("请输入信息的存储位置: ") 
+            decode_obj = endetext.LSB(decode_image)
+            decode_obj.lsbDecode(decode_text)
+        elif choice == "3":
+            exit()
+        else:
+            print("不许调皮！")
+
+
+if __name__ == "__main__":
+        main()
+
+
+```

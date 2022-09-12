@@ -58,7 +58,7 @@ pip install -r requirements.txt
 │   │           │   ├── __init__.py
 │   │           │   ├── endetext.py
 │   │           │   └── imgprocess.py
-│   │           └── test.py
+│   │           └── main.py
 │   ├── bdist.win-amd64
 │   └── lib
 │       ├── lsb  # 源代码
@@ -67,7 +67,6 @@ pip install -r requirements.txt
 │       │   └── imgprocess.py
 │       └── test.py
 ├── dist  # 发布包
-│   ├── lsb-steg-1.0.0.linux-x86_64.exe
 │   ├── lsb-steg-1.0.0.linux-x86_64.tar.gz
 │   ├── lsb-steg-1.0.0.tar.gz
 │   ├── lsb-steg-1.0.0.win-amd64.zip
@@ -84,7 +83,7 @@ pip install -r requirements.txt
 │   └── encode_text.txt
 └── main.py  # 项目测试文件
 
-16 directories, 45 files
+16 directories, 44 files
 ```
 
 ```shell
@@ -191,6 +190,4 @@ def main():
 
 if __name__ == "__main__":
         main()
-
-
 ```

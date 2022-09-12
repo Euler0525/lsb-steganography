@@ -73,7 +73,6 @@ LSB隐写术
    │       │   └── imgprocess.py
    │       └── test.py
    ├── dist  # 发布包
-   │   ├── lsb-steg-1.0.0.linux-x86_64.exe
    │   ├── lsb-steg-1.0.0.linux-x86_64.tar.gz
    │   ├── lsb-steg-1.0.0.tar.gz
    │   ├── lsb-steg-1.0.0.win-amd64.zip
@@ -90,7 +89,7 @@ LSB隐写术
    │   └── encode_text.txt
    └── main.py  # 项目测试文件
 
-   16 directories, 45 files
+   16 directories, 44 files
 
 .. code:: shell
 

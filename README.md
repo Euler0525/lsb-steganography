@@ -163,7 +163,7 @@ pip install -r requirements.txt
   
   - easy_install lsb_steg-1.0.0-py3-none-any.whl
 
-## 使用示例
+### 使用示例
 
 ```python
 from lsb import *

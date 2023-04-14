@@ -39,51 +39,35 @@ pip install -r requirements.txt
 ## 项目结构
 
 ```shell
-.              
-├── LICENSE.txt
-├── MANIFEST.in
-├── README.md  
-├── README.rst 
-├── __pycache__
-├── build
-│   ├── bdist.linux-x86_64
-│   │   └── wininst
-│   │       └── PURELIB
-│   │           ├── lsb_steg-1.0.0-py3.9.egg-info
-│   │           │   ├── PKG-INFO
-│   │           │   ├── SOURCES.txt
-│   │           │   ├── dependency_links.txt
-│   │           │   └── top_level.txt
-│   │           ├── lsb  # 源代码
-│   │           │   ├── __init__.py
-│   │           │   ├── endetext.py
-│   │           │   └── imgprocess.py
-│   │           └── main.py
-│   ├── bdist.win-amd64
-│   └── lib
-│       ├── lsb  # 源代码
-│       │   ├── __init__.py
-│       │   ├── endetext.py
-│       │   └── imgprocess.py
-│       └── test.py
-├── dist  # 发布包
+.
+├── README.md
+├── dist
 │   ├── lsb-steg-1.0.0.linux-x86_64.tar.gz
 │   ├── lsb-steg-1.0.0.tar.gz
 │   ├── lsb-steg-1.0.0.win-amd64.zip
 │   ├── lsb_steg-1.0.0-py3-none-any.whl
 │   └── lsb_steg-1.0.0-py3.9.egg
-├── img  # 测试用图片
+├── img
 │   ├── decode.png
 │   ├── encode.png
 │   ├── explain.png
 │   ├── imgprocess.png
 │   ├── lsb.png
-│   ├── decode_text.txt
-│   ├── encode_image.png
-│   └── encode_text.txt
-└── main.py  # 项目测试文件
+│   ├── process.png
+│   └── result.png
+├── lsb
+│   ├── __init__.py
+│   ├── endetext.py
+│   └── imgprocess.py
+├── main.py
+├── setup.py
+└── test
+    ├── decode_image.png
+    ├── decode_text.txt
+    ├── encode_image.png
+    └── encode_text.txt
 
-16 directories, 44 files
+4 directories, 22 files
 ```
 
 ```shell
